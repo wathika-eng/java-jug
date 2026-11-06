@@ -1,0 +1,10 @@
+package com.example.events;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface EventSessionRepository extends JpaRepository<EventSession, Long> {
+    List<EventSession> findByEventIdOrderByStartTimeAsc(Long eventId);
+}
